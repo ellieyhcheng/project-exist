@@ -1,0 +1,23 @@
+#status-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 270px;
+    height: 25px;
+}
+#bar {
+    height: 15px;
+    width: 150px;
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    margin: 5px;
+}
+
+#filler {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    
+}
+
