@@ -1,0 +1,18 @@
+#messageboard {
+    position: absolute;
+    height: 100%;
+    left: 0;
+  }
+  
+#statusbar {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+}
+
+#choice-panel {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    display: flex;
+}

@@ -15,8 +15,6 @@ class StatusBar extends Component {
         }
     }
 
-
-
     render() {
         return (
             <div id="status-bar-wrapper">
