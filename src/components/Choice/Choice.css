@@ -1,5 +1,14 @@
 .Choice {
+	background-color: white;
+	border: none;
+	cursor: pointer;
 	padding: 5px;
-	font-size: 20px;
-	font-family: times-new-roman;
+	font-size: 15px;
+	
+}
+
+#choice-wrapper {
+	background-color: white;
+	border: 1px solid black;
+	text-align: center;
 }

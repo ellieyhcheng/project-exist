@@ -10,7 +10,7 @@ class Choice extends Component {
 	}
 
 	handleClick = () => {
-		if(this.state.isPressed === true)
+		if (this.state.isPressed === true)
 			this.state.isPressed = false;
 		else
 			this.state.isPressed = true;
@@ -18,9 +18,11 @@ class Choice extends Component {
 
 	render() {
 		return (
-			<button className='Choice' onClick={this.handleClick}>
-				{this.props.name}
-			</button>
+			<div id="choice-wrapper">
+				<button className='Choice' onClick={this.handleClick}>
+					{this.props.name}
+				</button>
+			</div>
 		);
 	}
 }
