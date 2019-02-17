@@ -9,11 +9,11 @@ class Game extends Component {
 		return (
 			<div id="game-wrapper">
 				<div id="choice-panel">
-					<Choice name='intelligence' />
-					<Choice name='health' />
-					<Choice name='happiness' />
-					<Choice name='wealth' />
-					<Choice name='i forgot' />
+					<Choice name='Study' />
+					<Choice name='Party' />
+					<Choice name='Eat' />
+					<Choice name='Sleep' />
+					<Choice name='Exercise' />
 				</div>
 				<div id="app-wrapper">
 					<div id="messageboard"><MessageBoard></MessageBoard></div>
