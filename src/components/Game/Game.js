@@ -22,6 +22,15 @@ class Game extends Component {
 				eat: false,
 				exercise: false,
 				party: false,
+
+			}
+		}
+	}
+
+	// when do we reset?
+	reset = () => {
+		this.setState({
+			message: {
 			},
 			status: {
 				study: false,
@@ -30,6 +39,16 @@ class Game extends Component {
 				exercise: false,
 				party: false,
 			}
+		})
+	}
+
+	handleClick = (i, label) => {
+		if(i === true) {
+			this.setState({
+				message: {
+					...this.state.message, label: true
+				}
+			});
 		}
 	}
 
