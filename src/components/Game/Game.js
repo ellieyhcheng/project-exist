@@ -4,6 +4,13 @@ import Choice from '../Choice/Choice';
 import MessageBoard from '../MessageBoard/MessageBoard'
 import StatusBar from '../StatusBar/StatusBar'
 
+const changes = {
+	study: {
+		intelligence: 2,
+		health: -2
+	}
+}
+
 class Game extends Component {
 	constructor(props) {
 		super(props);
@@ -15,6 +22,7 @@ class Game extends Component {
 				eat: false,
 				exercise: false,
 				party: false,
+
 			}
 		}
 	}
@@ -23,6 +31,8 @@ class Game extends Component {
 	reset = () => {
 		this.setState({
 			message: {
+			},
+			status: {
 				study: false,
 				sleep: false,
 				eat: false,
@@ -46,15 +56,16 @@ class Game extends Component {
 		return (
 			<div id="game-wrapper">
 				<div id="choice-panel">
-					<Choice name='study' onClick={this.handleClick}/>
-					<Choice name='sleep' onClick={this.handleClick}/>
-					<Choice name='eat' onClick={this.handleClick}/>
-					<Choice name='exercise' onClick={this.handleClick}/>
-					<Choice name='party' onClick={this.handleClick}/>
+					<Choice name='Study' />
+					<Choice name='Sleep' />
+					<Choice name='Eat' />
+					<Choice name='Exercise' />
+					<Choice name='Party' />
+
 				</div>
 				<div id="app-wrapper">
-					<div id="messageboard" f><MessageBoard categories={this.state.message}></MessageBoard></div>
-					<div id="statusbar"><StatusBar></StatusBar></div>
+					<div id="messageboard"><MessageBoard categories={this.state.message}></MessageBoard></div>
+					<div id="statusbar"><StatusBar categories={this.state.status}></StatusBar></div>
 				</div>
 			</div>
 		);

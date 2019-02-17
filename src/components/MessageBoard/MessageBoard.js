@@ -27,7 +27,7 @@ class MessageBoard extends Component{
 			sleep: this.props.categories.sleep,
 			eat: this.props.categories.eat,
 			party: this.props.categories.party,
-			exercise: this.props.categories.exercise
+			exercise: this.props.categories.exercise,
 		};
 	}
 
