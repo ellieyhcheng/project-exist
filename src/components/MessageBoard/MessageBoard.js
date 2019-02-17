@@ -38,7 +38,7 @@ class MessageBoard extends Component{
 		output+=print(messages.eat, this.state.eat, this.state.change);
 		output+=print(messages.party, this.state.party, this.state.change);
 		output+=print(messages.exercise, this.state.exercise, this.state.change);
-		return(<p>{output}</p>);
+		return(<p className="message">{output}</p>);
 	}
 
 
@@ -46,9 +46,9 @@ class MessageBoard extends Component{
 		return(
 			<div id="text-box">
 				{this.printAll()}
-				<p>{messages.intro}</p>
+				<p className="message">{messages.intro}</p>
 			</div>
-			);
+		);
 	}
 	
 	
