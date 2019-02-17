@@ -42,6 +42,7 @@ class Game extends Component {
 					<Choice name='Eat' />
 					<Choice name='Exercise' />
 					<Choice name='Party' />
+
 				</div>
 				<div id="app-wrapper">
 					<div id="messageboard"><MessageBoard categories={this.state.message}></MessageBoard></div>

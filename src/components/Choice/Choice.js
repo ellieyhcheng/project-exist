@@ -9,12 +9,24 @@ class Choice extends Component {
 		};
 	}
 
+	var mybutton = document.getElementById("mybutton");
+
+
 	handleClick = () => {
 		if (this.state.isPressed === true)
 			this.state.isPressed = false;
 		else
 			this.state.isPressed = true;
 	}
+
+
+	mybutton.onclick = function() 
+	{
+    mybutton.disabled = true;
+    setTimeout(function() {
+        mybutton.disabled = false;
+    }, 2000);
+};​
 
 	render() {
 		return (
@@ -25,6 +37,10 @@ class Choice extends Component {
 			</div>
 		);
 	}
+
+
+
+
 }
 
 export default Choice;
