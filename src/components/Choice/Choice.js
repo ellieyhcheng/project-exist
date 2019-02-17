@@ -4,16 +4,11 @@ import './Choice.css'
 class Choice extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			isPressed: false,
-		};
+		this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick = () => {
-		if(this.state.isPressed === true)
-			this.state.isPressed = false;
-		else
-			this.state.isPressed = true;
+	handleClick(){
+		this.props.handleClick(true, this.props.name);
 	}
 
 	render() {

@@ -23,11 +23,11 @@ class MessageBoard extends Component{
 		super(props);
 		this.state = {
 			change: true,
-			study: true,
-			sleep: false,
-			eat: false,
-			party: false,
-			exercise: false
+			study: this.props.categories.study,
+			sleep: this.props.categories.sleep,
+			eat: this.props.categories.eat,
+			party: this.props.categories.party,
+			exercise: this.props.categories.exercise
 		};
 	}
 

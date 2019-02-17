@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import MessageBoard from './components/MessageBoard/MessageBoard'
-import StatusBar from './components/StatusBar/StatusBar'
-import Choice from './components/Choice/Choice'
-import Game from './components/Game/Game'
+import Game from './components/Game/Game.js'
 
 class App extends Component {
   render() {
