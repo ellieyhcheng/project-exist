@@ -6,3 +6,7 @@
     align-items: center;
     
 }
+
+#status-bar {
+    position: relative;
+}
