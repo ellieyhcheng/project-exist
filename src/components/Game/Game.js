@@ -5,27 +5,81 @@ import MessageBoard from '../MessageBoard/MessageBoard'
 import StatusBar from '../StatusBar/StatusBar'
 import Popup from '../Popup/Popup'
 
-const changes = {
-	study: {
-		intelligence: 2,
-		health: -2
-	}
-}
 
 class Game extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			messages: []
+			status: {
+				intelligence: this.randIntelligence(),
+				health: 100,
+				wealth: this.randWealth(),
+				happiness: 50,
+				attractiveness: 50,
+			},
+			messages: [],
+			count: 0
 		}
 	}
 
+	randIntelligence = () => {
+        var rand = Math.floor(1 + Math.random() * (99));
+        return rand;
+	}
+
+	randWealth = () => {
+        var rand = Math.random();
+		if(rand > 0.5)
+			return 75;
+		else 
+			return 25;
+	}
+
+	dependsOnWealth = () => {
+		var wealth = this.state.status.wealth;
+		if(wealth > 50)
+			return 75;
+		else 
+			return 25;
+	}
+	
 	handleClick = (i, label) => {
 		if (i === true) {
 			const newMsg = [...this.state.messages, label];
+			const newStats = {
+				...this.state.status
+			}
+
+			switch(label) {
+				case 'study':
+					newStats.intelligence = newStats.intelligence + 2;
+					newStats.health = newStats.health - 2;
+					break;
+				case 'sleep':
+					newStats.health = newStats.health + 2;
+					newStats.happiness = newStats.happiness + 2;
+					break;
+					case 'eat':
+					newStats.health = newStats.health + 1;
+					newStats.happiness = newStats.happiness + 1;
+					newStats.attractiveness = newStats.attractiveness - 1;
+					newStats.wealth = newStats.wealth - 1;
+					break;
+					case 'exercise':
+					newStats.health = newStats.health + 2;
+					newStats.intelligence = newStats.intelligence + 1;
+					newStats.attractiveness = newStats.attractiveness + 1;
+					break;
+					case 'party':
+					newStats.happiness = newStats.happiness + 4;
+					newStats.intelligence = newStats.intelligence - 2;
+					newStats.health = newStats.health - 2;
+					break;
+			}
+			console.log(this.state.status);
 			this.setState({
-				...this.state,
+				status: newStats,
 				messages: newMsg,
 				count: this.count + 1,
 			});
@@ -35,6 +89,7 @@ class Game extends Component {
 
 	render() {
 		const messages = this.state.messages;
+		const status = this.state.status;
 		return (
 			<div id="game-wrapper">
 				<div id="choice-panel">
@@ -46,7 +101,7 @@ class Game extends Component {
 				</div>
 				<div id="app-wrapper">
 					<div id="messageboard"><MessageBoard messages={messages} /></div>
-					<div id="statusbar"><StatusBar ></StatusBar></div>
+					<div id="statusbar"><StatusBar status={status} ></StatusBar></div>
 					<div id="popup"><Popup></Popup></div>
 				</div>
 			</div>

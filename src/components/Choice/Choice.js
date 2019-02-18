@@ -21,7 +21,6 @@ class Choice extends Component
 		});
 
 		setTimeout(() => this.setState({ isButtonDisabled: false}), 3000);
-		return this.props.onLaunch()
 	}
 
 

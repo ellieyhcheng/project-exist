@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './MessageBoard.css';
 
 const messages = {
-	intro: [<p className="message">First day of college.</p>],
+	intro: [<p className="message">First day of college at UCLA!</p>],
 	study: [<p className="message">You studied.</p>],
 	sleep: [<p className="message">You slept.</p>],
 	eat: [<p className="message">You ate.</p>],
