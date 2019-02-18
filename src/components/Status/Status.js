@@ -24,7 +24,10 @@ class Status extends Component {
 
     updateLength = () => {
         var filler = this.refs.filler;
-        filler.style.width = this.props.percent;
+        var percent = this.props.percent;
+        if (percent > 100)
+            percent = 100;
+        filler.style.width = percent + "%";
     }
 
     render() {
