@@ -18,10 +18,14 @@
 	color: white;
 }
 
+<<<<<<< HEAD
 .Choice:focus {
 	outline: none; 
 	box-shadow: none;
 }
+=======
+.Choice:focus {outline: 0 !important;}
+>>>>>>> 29c0fe90d17eca3146080840b9faafc9d4cf873e
 
 .Choice:active {
 	background-color: black;
