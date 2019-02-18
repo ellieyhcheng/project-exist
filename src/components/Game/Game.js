@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Game.css';
 import Choice from '../Choice/Choice';
 import MessageBoard from '../MessageBoard/MessageBoard'
-import StatusBar from '../StatusBar/Statusbar'
+import StatusBar from '../StatusBar/StatusBar'
 import Popup from '../Popup/Popup'
 import Shop from '../Shop/Shop'
 
