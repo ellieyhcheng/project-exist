@@ -4,6 +4,7 @@ import Choice from '../Choice/Choice';
 import MessageBoard from '../MessageBoard/MessageBoard'
 import StatusBar from '../StatusBar/StatusBar'
 import Popup from '../Popup/Popup'
+import Shop from '../Shop/Shop'
 
 
 class Game extends Component {
@@ -100,9 +101,10 @@ class Game extends Component {
 					<Choice name='party' onClick={this.handleClick.bind(this)} />
 				</div>
 				<div id="app-wrapper">
+          <div id="shop"><Shop onClick={this.handleClick.bind(this)}></Shop></div>
+          <div id="popup"><Popup onClick={this.handleClick.bind(this)}></Popup></div>
 					<div id="messageboard"><MessageBoard messages={messages} /></div>
 					<div id="statusbar"><StatusBar status={status} ></StatusBar></div>
-					<div id="popup"><Popup></Popup></div>
 				</div>
 			</div>
 		);
