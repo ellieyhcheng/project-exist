@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Game.css';
 import Choice from '../Choice/Choice';
 import MessageBoard from '../MessageBoard/MessageBoard'
-import StatusBar from '../StatusBar/Statusbar'
+import StatusBar from '../StatusBar/StatusBar'
 import Popup from '../Popup/Popup'
 
 const changes = {
@@ -17,19 +17,7 @@ class Game extends Component {
 		super(props);
 
 		this.state = {
-<<<<<<< HEAD
-			message: {
-				study: false,
-				sleep: false,
-				eat: false,
-				exercise: false,
-				party: false,
-			},
-			messages: [],
-			count: 0,
-=======
 			messages: []
->>>>>>> 0a741542918fb3fbf40718a7a6d7df31e71ccbe4
 		}
 	}
 
@@ -49,11 +37,7 @@ class Game extends Component {
 		const messages = this.state.messages;
 		return (
 			<div id="game-wrapper">
-<<<<<<< HEAD
-				<div id="choice-panel">	
-=======
 				<div id="choice-panel">
->>>>>>> 0a741542918fb3fbf40718a7a6d7df31e71ccbe4
 					<Choice name='study' onClick={this.handleClick.bind(this)} />
 					<Choice name='sleep' onClick={this.handleClick.bind(this)} />
 					<Choice name='eat'  onClick={this.handleClick.bind(this)} />
