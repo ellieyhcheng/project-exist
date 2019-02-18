@@ -7,7 +7,13 @@ const messages = {
 	sleep: [<p className="message">You slept.</p>],
 	eat: [<p className="message">You ate.</p>],
 	party: [<p className="message">You partied.</p>],
-	exercise: [<p className="message">You exercised.</p>]
+	exercise: [<p className="message">You exercised.</p>],
+	'buy shirt': [<p className="message">You bought a shirt.</p>],
+	'buy shoes': [<p className="message">You bought shoes.</p>],
+	'buy dress': [<p className="message">You bought a dress.</p>],
+	'buy pants': [<p className="message">You bought pants.</p>],
+	yes: [<p className="message">You accepted the event.</p>],
+	no: [<p className="message">You rejected the event.</p>]
 }
 
 class MessageBoard extends Component {

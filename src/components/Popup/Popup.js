@@ -17,8 +17,8 @@ class Popup extends Component{
 	{
 		return(
 			<div>
-				<Choice name = 'Yes'/>
-				<Choice name = 'No'/>
+				<Choice name = 'yes' onClick={this.props.onClick}/>
+				<Choice name = 'no' onClick={this.props.onClick}/>
 			</div>
 		);
 	}

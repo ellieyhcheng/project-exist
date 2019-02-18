@@ -3,32 +3,24 @@ import './Shop.css';
 import Choice from '../Choice/Choice';
 
 class Shop extends Component{
-	constructor(props){
-		super(props);
-		this.state = {
-			shirt:false,
-			shoes:false,
-			dress:true,
-			pants:false
-		};
-	}
+
 	initialize_response = (a) => 
 	{
 		if(a==1){
 			return(
-				<Choice name = 'buy shirt'/>
+				<Choice name = 'buy shirt' onClick={this.props.onClick}/>
 			);
 		}else if(a==2){
 			return(
-				<Choice name = 'buy shoes'/>
+				<Choice name = 'buy shoes' onClick={this.props.onClick}/>
 			);
 		}else if(a==3){
 			return(
-				<Choice name = 'buy dress'/>
+				<Choice name = 'buy dress' onClick={this.props.onClick}/>
 			);
 		}else if(a==4){
 			return(
-				<Choice name = 'buy pants'/>
+				<Choice name = 'buy pants' onClick={this.props.onClick}/>
 			);
 		}
 

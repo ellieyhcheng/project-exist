@@ -1,7 +1,7 @@
 #event-box {
-	position: fixed;
-	bottom: 35%;
-  	right: 25%;
+	position: absolute;
+	bottom: 85%;
+  	right: 5%;
     width: 290px;
     height: 350px;
     border: 1px solid black;
