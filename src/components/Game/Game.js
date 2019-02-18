@@ -22,6 +22,21 @@ class Game extends Component {
 			messages: [],
 			count: 0
 		}
+
+		this.reset = this.reset.bind(this);
+	}
+
+	// when do we reset?
+	reset = () => {
+		this.setState({
+			message: {
+				study: false,
+				sleep: false,
+				eat: false,
+				exercise: false,
+				party: false,
+			}
+		})
 	}
 
 	randIntelligence = () => {
@@ -93,11 +108,11 @@ class Game extends Component {
 		const status = this.state.status;
 		return (
 			<div id="game-wrapper">
-				<div id="choice-panel">
+				<div id="choice-panel">	
 					<Choice name='study' onClick={this.handleClick.bind(this)} />
 					<Choice name='sleep' onClick={this.handleClick.bind(this)} />
 					<Choice name='eat'  onClick={this.handleClick.bind(this)} />
-					<Choice name='exercise' onClick={this.handleClick.bind(this)} />
+					<Choice name='exercise'  onClick={this.handleClick.bind(this)} />
 					<Choice name='party' onClick={this.handleClick.bind(this)} />
 				</div>
 				<div id="app-wrapper">
