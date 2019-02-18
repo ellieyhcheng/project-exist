@@ -3,6 +3,7 @@ import './Game.css';
 import Choice from '../Choice/Choice';
 import MessageBoard from '../MessageBoard/MessageBoard'
 import StatusBar from '../StatusBar/StatusBar'
+import Popup from '../Popup/Popup'
 
 const changes = {
 	study: {
@@ -23,8 +24,11 @@ class Game extends Component {
 				exercise: false,
 				party: false,
 
-			}
+			},
+			messages: []
 		}
+
+		this.reset = this.reset.bind(this);
 	}
 
 	// when do we reset?
@@ -41,30 +45,33 @@ class Game extends Component {
 	}
 
 	handleClick = (i, label) => {
-		if(i === true) {
+		if (i === true) {
+			const newMsg = [...this.state.messages, label];
 			this.setState({
-				message: {
-					...this.state.message, label: true
-				}
+				...this.state,
+				messages: newMsg,
 			});
 		}
+		
 	}
-	
 
 	render() {
+		const messages = this.state.messages;
 		return (
 			<div id="game-wrapper">
 				<div id="choice-panel">
-					<Choice name='Study' onClick={this.handleClick} />
-					<Choice name='Sleep' onClick={this.handleClick} />
-					<Choice name='Eat'  onClick={this.handleClick} />
-					<Choice name='Exercise'  onClick={this.handleClick} />
-					<Choice name='Party' onClick={this.handleClick} />
+					
+					<Choice name='study' onClick={this.handleClick.bind(this)} />
+					<Choice name='sleep' onClick={this.handleClick.bind(this)} />
+					<Choice name='eat'  onClick={this.handleClick.bind(this)} />
+					<Choice name='exercise'  onClick={this.handleClick.bind(this)} />
+					<Choice name='party' onClick={this.handleClick.bind(this)} />
 
 				</div>
 				<div id="app-wrapper">
-					<div id="messageboard"><MessageBoard categories={this.state.message}></MessageBoard></div>
+					<div id="messageboard"><MessageBoard messages={messages} /></div>
 					<div id="statusbar"><StatusBar ></StatusBar></div>
+					<div id="popup"><Popup></Popup></div>
 				</div>
 			</div>
 		);
