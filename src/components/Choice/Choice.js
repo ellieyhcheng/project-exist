@@ -6,13 +6,13 @@ class Choice extends Component
 	constructor(props) 
 	{
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
+		this.onLaunch = this.onLaunch.bind(this);
 		this.state = {
 			isButtonDisabled: false
 		};
 	}
 
-	handleClick = (event) => 
+	onLaunch = (event) => 
 	{
 		event.preventDefault();
 		this.setState({
@@ -20,7 +20,7 @@ class Choice extends Component
 		});
 
 		setTimeout(() => this.setState({ isButtonDisabled: false}), 3000);
-		return this.props.handleClick()
+		return this.props.onLaunch()
 	}
 
 
@@ -30,7 +30,7 @@ class Choice extends Component
 		return (
 			
 
-				<button className='Choice' onClick={this.handleClick}
+				<button className='Choice' onClick={this.onLaunch}
 				disabled={this.state.isButtonDisabled}> {this.props.name} </button>
 		);
 	}
