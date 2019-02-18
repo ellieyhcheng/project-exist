@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './StatusBar.css';
-import Status from "../Status/Status.js";
+import Status from "../Status/Status";
 
 class StatusBar extends Component {
     constructor(props) {

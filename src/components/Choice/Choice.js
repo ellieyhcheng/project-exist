@@ -7,32 +7,17 @@ class Choice extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick(){
-		this.props.handleClick(true, this.props.name);
+	handleClick = () => {
+		this.props.onClick(true, this.props.name);
 	}
-
-
-	mybutton.onclick = function() 
-	{
-    mybutton.disabled = true;
-    setTimeout(function() {
-        mybutton.disabled = false;
-    }, 2000);
-};​
 
 	render() {
 		return (
-			<div id="choice-wrapper">
-				<button className='Choice' onClick={this.handleClick}>
-					{this.props.name}
-				</button>
-			</div>
+			<button className='Choice' onClick={this.handleClick}>
+				{this.props.name}
+			</button>
 		);
 	}
-
-
-
-
 }
 
 export default Choice;
