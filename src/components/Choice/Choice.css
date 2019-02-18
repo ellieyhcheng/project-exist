@@ -24,7 +24,7 @@
 	color: white;
 }
 
-.Choice: focus {outline: 0 !important;}
+.Choice:focus {outline: 0 !important;}
 
 .Choice:active {
 	background-color: black;
