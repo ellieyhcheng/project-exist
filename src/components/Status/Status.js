@@ -5,21 +5,30 @@ class Status extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            percent: this.props.percent,
             name: this.props.name,
         }
+        this.updateLength = this.updateLength.bind(this);
     }
 
     componentDidMount() {
         this.updateLength();
     }
 
+    componentWillUpdate(){
+        this.updateLength();
+    }
+
+    componentDidUpdate(){
+        this.updateLength();
+    }
+
     updateLength = () => {
         var filler = this.refs.filler;
-        filler.style.width = this.state.percent;
+        filler.style.width = this.props.percent;
     }
 
     render() {
+        
         return (
             <div id="status-wrapper">
                 <p>{this.state.name}</p>

@@ -1,22 +1,16 @@
 .Choice {
-	height: 50px;
+	height:50px;
 	cursor: pointer;
 	width: 100px;
-	padding: 10px;
 	font-size: 15px;
 	font-family: sans-serif;
 	background-color: white;
 	text-align: center;
-	margin: 4px 10px;
+	margin: 5px 5px;
 	border-radius: 8px;
 	border: 2px solid black;
 	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;	
-}
-
-@keyframes cooldown {
-	0% {width: 100%;}
-	100% {width: 0;}
+	transition-duration: 0.4s;
 }
 
 .Choice:hover {
@@ -24,12 +18,30 @@
 	color: white;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 73e1362717fdbcf8408eb7ca488891836e3986ce
+.Choice:focus {
+	outline: none; 
+	box-shadow: none;
+}
+<<<<<<< HEAD
+=======
 .Choice:focus {outline: 0 !important;}
+>>>>>>> 29c0fe90d17eca3146080840b9faafc9d4cf873e
+=======
+>>>>>>> 73e1362717fdbcf8408eb7ca488891836e3986ce
 
 .Choice:active {
 	background-color: black;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
+}
+
+.Choice:disabled {
+  background-color: #CCC;
+  box-shadow: none;
 }
 
 section
