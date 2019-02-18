@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Game.css';
 import Choice from '../Choice/Choice';
 import MessageBoard from '../MessageBoard/MessageBoard'
-import StatusBar from '../StatusBar/StatusBar'
+import StatusBar from '../StatusBar/Statusbar'
 import Popup from '../Popup/Popup'
 
 const changes = {
@@ -23,9 +23,9 @@ class Game extends Component {
 				eat: false,
 				exercise: false,
 				party: false,
-
 			},
-			messages: []
+			messages: [],
+			count: 0,
 		}
 
 		this.reset = this.reset.bind(this);
@@ -50,6 +50,7 @@ class Game extends Component {
 			this.setState({
 				...this.state,
 				messages: newMsg,
+				count: this.count + 1,
 			});
 		}
 		
@@ -59,14 +60,12 @@ class Game extends Component {
 		const messages = this.state.messages;
 		return (
 			<div id="game-wrapper">
-				<div id="choice-panel">
-					
+				<div id="choice-panel">	
 					<Choice name='study' onClick={this.handleClick.bind(this)} />
 					<Choice name='sleep' onClick={this.handleClick.bind(this)} />
 					<Choice name='eat'  onClick={this.handleClick.bind(this)} />
 					<Choice name='exercise'  onClick={this.handleClick.bind(this)} />
 					<Choice name='party' onClick={this.handleClick.bind(this)} />
-
 				</div>
 				<div id="app-wrapper">
 					<div id="messageboard"><MessageBoard messages={messages} /></div>
