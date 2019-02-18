@@ -76,21 +76,37 @@ class Game extends Component {
 					newStats.health = newStats.health + 2;
 					newStats.happiness = newStats.happiness + 2;
 					break;
-					case 'eat':
+				case 'eat':
 					newStats.health = newStats.health + 1;
 					newStats.happiness = newStats.happiness + 1;
 					newStats.attractiveness = newStats.attractiveness - 1;
 					newStats.wealth = newStats.wealth - 1;
 					break;
-					case 'exercise':
+				case 'exercise':
 					newStats.health = newStats.health + 2;
 					newStats.intelligence = newStats.intelligence + 1;
 					newStats.attractiveness = newStats.attractiveness + 1;
 					break;
-					case 'party':
+				case 'party':
 					newStats.happiness = newStats.happiness + 4;
 					newStats.intelligence = newStats.intelligence - 2;
 					newStats.health = newStats.health - 2;
+					break;
+				case 'buy shirt':
+					newStats.wealth = newStats.wealth - 5;
+					newStats.attractiveness = newStats.attractiveness + 2;
+					break;
+				case 'buy shoes':
+					newStats.wealth = newStats.wealth - 15;
+					newStats.attractiveness = newStats.attractiveness + 2;
+					break;
+				case 'buy dress':
+					newStats.wealth = newStats.wealth - 10;
+					newStats.attractiveness = newStats.attractiveness + 2;
+					break;
+				case 'buy dress':
+					newStats.wealth = newStats.wealth - 5;
+					newStats.attractiveness = newStats.attractiveness + 2;
 					break;
 			}
 			console.log(this.state.status);
@@ -116,8 +132,8 @@ class Game extends Component {
 					<Choice name='party' onClick={this.handleClick.bind(this)} />
 				</div>
 				<div id="app-wrapper">
-          <div id="shop"><Shop onClick={this.handleClick.bind(this)}></Shop></div>
-          <div id="popup"><Popup onClick={this.handleClick.bind(this)}></Popup></div>
+					<div id="shop"><Shop onClick={this.handleClick.bind(this)}></Shop></div>
+					<div id="popup"><Popup onClick={this.handleClick.bind(this)}></Popup></div>
 					<div id="messageboard"><MessageBoard messages={messages} /></div>
 					<div id="statusbar"><StatusBar status={status} ></StatusBar></div>
 				</div>

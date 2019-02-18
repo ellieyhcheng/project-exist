@@ -8,7 +8,7 @@ class Choice extends Component
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
 		this.state = {
-			isButtonDisabled: false
+			isButtonDisabled: false,
 		};
 	}
 
