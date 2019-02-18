@@ -6,14 +6,15 @@ class Choice extends Component
 	constructor(props) 
 	{
 		super(props);
-		this.onLaunch = this.onLaunch.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 		this.state = {
 			isButtonDisabled: false
 		};
 	}
 
-	onLaunch = (event) => 
+	handleClick = (event) => 
 	{
+		this.props.onClick(true, this.props.name);
 		event.preventDefault();
 		this.setState({
 			isButtonDisabled: true
@@ -24,13 +25,10 @@ class Choice extends Component
 	}
 
 
-
 	render() 
 	{
 		return (
-			
-
-				<button className='Choice' onClick={this.onLaunch}
+				<button className='Choice' onClick={this.handleClick}
 				disabled={this.state.isButtonDisabled}> {this.props.name} </button>
 		);
 	}
