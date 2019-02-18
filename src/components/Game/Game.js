@@ -14,7 +14,7 @@ class Game extends Component {
 		this.state = {
 			status: {
 				intelligence: this.randIntelligence(),
-				health: 100,
+				health: 60,
 				wealth: this.randWealth(),
 				happiness: 50,
 				attractiveness: 50,
@@ -22,21 +22,6 @@ class Game extends Component {
 			messages: [],
 			count: 0
 		}
-
-		this.reset = this.reset.bind(this);
-	}
-
-	// when do we reset?
-	reset = () => {
-		this.setState({
-			message: {
-				study: false,
-				sleep: false,
-				eat: false,
-				exercise: false,
-				party: false,
-			}
-		})
 	}
 
 	randIntelligence = () => {
@@ -70,17 +55,20 @@ class Game extends Component {
 			switch(label) {
 				case 'study':
 					newStats.intelligence = newStats.intelligence + 2;
-					newStats.health = newStats.health - 2;
+					newStats.health = newStats.health - 5;
+					newStats.happiness = newStats.happiness - 2;
 					break;
 				case 'sleep':
 					newStats.health = newStats.health + 2;
 					newStats.happiness = newStats.happiness + 2;
+					
 					break;
 				case 'eat':
 					newStats.health = newStats.health + 1;
 					newStats.happiness = newStats.happiness + 1;
 					newStats.attractiveness = newStats.attractiveness - 1;
 					newStats.wealth = newStats.wealth - 1;
+					newStats.intelligence = newStats.intelligence - 1;
 					break;
 				case 'exercise':
 					newStats.health = newStats.health + 2;
@@ -90,7 +78,7 @@ class Game extends Component {
 				case 'party':
 					newStats.happiness = newStats.happiness + 4;
 					newStats.intelligence = newStats.intelligence - 2;
-					newStats.health = newStats.health - 2;
+					newStats.health = newStats.health - 4;
 					break;
 				case 'buy shirt':
 					newStats.wealth = newStats.wealth - 5;
