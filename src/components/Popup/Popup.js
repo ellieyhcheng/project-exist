@@ -17,8 +17,10 @@ class Popup extends Component{
 	{
 		return(
 			<div>
+
 				<button className="YesNoOption">Yes</button>
 				<button className="YesNoOption">No</button>
+
 			</div>
 		);
 	}

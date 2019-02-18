@@ -3,27 +3,18 @@ import './StatusBar.css';
 import Status from "../Status/Status";
 
 class StatusBar extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-            intelligence: this.props.intelligence,
-            health: this.props.health,
-            happiness: this.props.happiness,
-            attractiveness: this.props.attractiveness,
-            wealth: this.props.wealth
-        }
-    }
-
     render() {
+        
+        const status = this.props.status;
+        
         return (
             <div id="status-bar-wrapper">
                 <div id="status-bar">
-                    <Status name="Intelligence" percent={this.state.intelligence + "%"}></Status>
-                    <Status name="Health" percent={this.state.health + "%"}></Status>
-                    <Status name="Happiness" percent={this.state.happiness + "%"}></Status>
-                    <Status name="Attractiveness" percent={this.state.attractiveness + "%"}></Status>
-                    <Status name="Wealth" percent={this.state.wealth + "%"}></Status>
+                    <Status name="Intelligence" percent={status.intelligence + "%"}></Status>
+                    <Status name="Health" percent={status.health + "%"}></Status>
+                    <Status name="Happiness" percent={status.happiness + "%"}></Status>
+                    <Status name="Attractiveness" percent={status.attractiveness + "%"}></Status>
+                    <Status name="Wealth" percent={status.wealth + "%"}></Status>
                 </div>
             </div>
         );
